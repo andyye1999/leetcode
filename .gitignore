@@ -5,7 +5,7 @@
 *.so
 *.VC.db
 *.VC.opendb
-
+.vscode/
 #cmake
 /cmbuild/
 /build/
