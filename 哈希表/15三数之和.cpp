@@ -5,11 +5,11 @@
 using namespace std;
 
 
-// 先排序，双指针法，再去重
+// 先排序，双指针法，再去重 头文件<algorithm>
 vector<vector<int>> threesum(vector<int> &nums)
 {
     vector<vector<int>> result;
-    sort(nums.begin(),nums.end());
+    sort(nums.begin(),nums.end()); // 头文件<algorithm>
     for(int i = 0;i < nums.size();i++)
     {
         if(nums[i] > 0 ) return result;
