@@ -2,7 +2,7 @@
  * @Author: yehongcen && as_yhc@163.com
  * @Date: 2023-04-20 20:59:46
  * @LastEditors: redust as_yhc@163.com
- * @LastEditTime: 2023-04-20 21:23:38
+ * @LastEditTime: 2023-04-22 14:50:02
  * @FilePath: \leetcode\二叉树\112路径之和.cpp
  * @Description: 路径之和
  * Copyright (c) 2023 by yehongcen, All Rights Reserved.
@@ -38,6 +38,7 @@ bool hasPathSum(TreeNode *root, int sum)
     }
     return hasPathSum(root->left, sum - root->val) || hasPathSum(root->right, sum - root->val);
 }
+
 
 
 /**
