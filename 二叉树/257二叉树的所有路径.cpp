@@ -2,7 +2,7 @@
  * @Author: yehongcen && as_yhc@163.com
  * @Date: 2023-04-20 14:12:54
  * @LastEditors: redust as_yhc@163.com
- * @LastEditTime: 2023-04-20 21:52:37
+ * @LastEditTime: 2023-04-23 19:52:03
  * @FilePath: \leetcode\二叉树\257二叉树的所有路径.cpp
  * @Description: 
  * Copyright (c) 2023 by yehongcen, All Rights Reserved. 
@@ -61,4 +61,23 @@ vector<string> suoyoulujing(TreeNode* root)
     if(root == nullptr) return result;
     traversal(root,path,result);
     return result;
+}
+
+/**
+ * @description: 是不是回溯就加if()啊
+ * @param {TreeNode*} root
+ * @param {vector<string>} &
+ * @param {string} path
+ * @return {*}
+ */
+void dfs(TreeNode* root,vector<string> & res,string path)
+{
+    path += to_string(root->val);
+    if(root->left == nullptr && root->right == nullptr)
+    {
+        res.push_back(path);
+        return;
+    }
+    if(root->left) dfs(root->left,res,path + "->");
+    if(root->right) dfs(root->right,res,path + "->");
 }
