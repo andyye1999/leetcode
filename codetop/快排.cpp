@@ -59,3 +59,31 @@ int main()
     }
     return 0;
 }
+
+void quick_sort(vector<int> &nums,int start,int end)
+{
+    if(start >= end) return;
+    int left,right;
+    int mid = rand() % (end - start + 1) + start;
+    swap(nums[start],nums[mid]);
+    int firstnum = nums[start];
+
+    left = start;
+    right = end;
+    while(left < right)
+    {
+        while(left < right && nums[right] >= firstnum) right--;
+        if(left < right)
+        {
+            nums[left] = nums[right];
+        }
+        while(left < right && nums[left] <= firstnum) left++;
+        if(left < right)
+        {
+            nums[left] = nums[right];
+        }
+    }
+    nums[left] = firstnum;
+    quick_sort(nums,start,left - 1);
+    quick_sort(nums,left + 1,end);
+}
